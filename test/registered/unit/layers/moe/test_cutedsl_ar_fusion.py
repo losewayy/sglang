@@ -5,15 +5,17 @@ from unittest.mock import MagicMock, patch
 import pytest
 import torch
 
-from sglang.srt.layers.boundary_layout import Layout, SumGroup, TokenAxis
 from sglang.srt.layers.communicator import (
     ADD_AND_NORM,
     FfnExitFusion,
     LayerCommunicator,
+    Layout,
+    SumGroup,
+    TokenAxis,
     UnreducedOutput,
-    _attention_input_step,
     reduce_output,
 )
+from sglang.srt.layers.communicator.boundary import _attention_input_step
 from sglang.srt.layers.flashinfer_mnnvl_cutedsl import (
     FlashInferMNNVLCuteDSLARFusion,
     _retargeted_config,

@@ -9,12 +9,13 @@ from unittest.mock import patch
 import pytest
 import torch
 
-from sglang.srt.layers.boundary_layout import Layout, TokenAxis
 from sglang.srt.layers.communicator import (
     ADD_AND_NORM,
     LayerCommunicator,
-    _attention_input_step,
+    Layout,
+    TokenAxis,
 )
+from sglang.srt.layers.communicator.boundary import _attention_input_step
 from sglang.srt.layers.dp_attention import DpPaddingMode
 from sglang.srt.lora.backend.base_backend import BaseLoRABackend
 from sglang.srt.lora.backend.triton_backend import (
